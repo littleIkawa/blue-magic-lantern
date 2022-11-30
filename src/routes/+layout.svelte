@@ -135,7 +135,7 @@
     height: 2rem;
     border-radius: 100%;
     background-color: skyblue;
-    backdrop-filter: blur(0.15rem);
+    backdrop-filter: blur(0.1rem);
   }
   .cursor span.dot1.active {
     border: 2px solid azure;
