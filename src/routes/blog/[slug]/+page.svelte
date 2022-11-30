@@ -16,13 +16,13 @@
 
   // TODO: ogpはデプロイしたあと設定
   const ogp = {
-    url: `https://littleikawa.github.io//blog/${id}/`,
+    url: `https://littleikawa.github.io/blue-magic-lantern/blog/${id}/`,
     type: "article",
     title,
     description,
     siteName: "Blue Magic Lantern",
     // githubでデプロイするとここに保存されているようなのでこのようにする.
-    image: `https://littleikawa.github.io//blog/thumb/${thumbnail}`,
+    image: `https://littleikawa.github.io/blue-magic-lantern/blog/thumb/${thumbnail}`,
   };
 </script>
 
