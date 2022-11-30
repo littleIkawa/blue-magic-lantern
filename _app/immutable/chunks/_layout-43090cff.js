@@ -1,0 +1,1 @@
+const n=!0,t="always",r=({url:e})=>({currentRoute:e.pathname}),a=Object.freeze(Object.defineProperty({__proto__:null,prerender:!0,trailingSlash:t,load:r},Symbol.toStringTag,{value:"Module"}));export{a as _,r as l,n as p,t};

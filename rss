@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Blue Magic Lantern</title>
+<description>Waka's profile and blog website</description>
+<link>https://domain.tld</link>
+<atom:link href="https://domain.tld/rss.xml" rel="self" type="application/rss+xml"/>
+<item>
+<guid isPermaLink="true">https://domain.tld/blog/first-message</guid>
+<title>ブログを作ってみました</title>
+<link>https://domain.tld/blog/first-message</link>
+<description>ブログを作ってみました</description>
+<pubDate>Sun, 20 Nov 2022 00:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
