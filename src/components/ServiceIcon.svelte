@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import type { AllowedName } from "@/components/allowdServiceName";
 
   export let name: AllowedName;
@@ -11,9 +12,9 @@
       case "svelte":
         return "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg";
       case "twitter":
-        return "img/icon/twitter.svg";
+        return `${base}/img/icon/twitter.svg`;
       case "gmail":
-        return "img/icon/google-gmail.svg";
+        return `${base}/img/icon/google-gmail.svg`;
       default:
         return "";
     }

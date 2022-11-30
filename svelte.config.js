@@ -1,6 +1,8 @@
-import adapter from "@sveltejs/adapter-auto";
+// import adapter from "@sveltejs/adapter-auto";
+import staticAdapter from "@sveltejs/adapter-static";
 import preprocess from "svelte-preprocess";
 import { mdsvex } from "mdsvex";
+const production = process.env.NODE_ENV === "production";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,7 +11,13 @@ const config = {
   preprocess: [preprocess(), mdsvex({ extensions: [".md"] })],
 
   kit: {
-    adapter: adapter(),
+    paths: {
+      base: production ? "/blue-magic-lantern" : "",
+    },
+    adapter: staticAdapter({
+      fallback: null,
+      precompress: false,
+    }),
   },
   extensions: [".svelte", ".md"],
 };
