@@ -127,14 +127,14 @@
     pointer-events: none;
     z-index: 10000;
     transform: translate(-50%, -50%);
-    /* mix-blend-mode: difference; */
-    mix-blend-mode: exclusion;
+    /* mix-blend-mode: exclusion; */
+    mix-blend-mode: luminosity;
   }
   .cursor span.dot1 {
     width: 2rem;
     height: 2rem;
     border-radius: 100%;
-    background-color: azure;
+    background-color: skyblue;
     backdrop-filter: blur(0.15rem);
   }
   .cursor span.dot1.active {
