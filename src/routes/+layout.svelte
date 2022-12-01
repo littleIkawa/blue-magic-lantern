@@ -8,6 +8,7 @@
   import type { LayoutData } from "./$types";
   import SiteFooter from "@/components/SiteFooter.svelte";
   import SiteHeader from "@/components/SiteHeader.svelte";
+  import { afterNavigate } from "$app/navigation";
 
   export let data: LayoutData;
 
@@ -36,28 +37,21 @@
   // aタグ全部にホバー時のイベントリスナを付与する.
   // NOTE: Svelte側でページ遷移時に任意のタグに対してイベントを付与できればいいがわからなかった.
   const setLinkHoverEvent = () => {
-    const tags = document.getElementsByTagName("a");
-    for (const tag of tags) {
-      // 例えばナビゲーションリンク等にイベントリスナが溜まってしまわないように必ず解除動作をする.
-      // 関連するイベントがセットされていないなら何も起こらないので問題ない.
-      tag.removeEventListener("mouseenter", activateLink);
-      tag.removeEventListener("mouseenter", deactivateLink);
-      tag.addEventListener("mouseenter", activateLink);
-      tag.addEventListener("mouseleave", deactivateLink);
+    if (browser) {
+      const tags = document.getElementsByTagName("a");
+      for (const tag of tags) {
+        // 例えばナビゲーションリンク等にイベントリスナが溜まってしまわないように必ず解除動作をする.
+        // 関連するイベントがセットされていないなら何も起こらないので問題ない.
+        tag.removeEventListener("mouseenter", activateLink);
+        tag.removeEventListener("mouseenter", deactivateLink);
+        tag.addEventListener("mouseenter", activateLink);
+        tag.addEventListener("mouseleave", deactivateLink);
+      }
     }
   };
 
-  // マウント時にはリスナ付与を実行
-  onMount(setLinkHoverEvent);
-  // ページ遷移時にpage storeが変更されるので, これをトリガーとして実行させる.
-  // 初回ロード時でも変更したとみなされ実行されるが, マウントされていないうちに実行されると,
-  // documentが未定義でエラーが起こるので, その確認をしている.
-  $: {
-    $page;
-    if (browser) {
-      setLinkHoverEvent();
-    }
-  }
+  // ナビゲーション完了時にリスナ付与を実行
+  afterNavigate(setLinkHoverEvent);
 </script>
 
 <svelte:head>
