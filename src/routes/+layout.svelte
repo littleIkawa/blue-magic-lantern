@@ -4,6 +4,7 @@
   import { blur } from "svelte/transition";
   import { base } from "$app/paths";
   import { page } from "$app/stores";
+  import { browser } from "$app/environment";
   import type { LayoutData } from "./$types";
   import SiteFooter from "@/components/SiteFooter.svelte";
   import SiteHeader from "@/components/SiteHeader.svelte";
@@ -53,7 +54,7 @@
   // documentが未定義でエラーが起こるので, その確認をしている.
   $: {
     $page;
-    if (typeof document !== "undefined") {
+    if (browser) {
       setLinkHoverEvent();
     }
   }
