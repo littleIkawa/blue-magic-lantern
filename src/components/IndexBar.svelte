@@ -11,7 +11,13 @@
 <div class="contents-link-wrapper">
   {#each indexList as idx}
     {@const href = idx.href}
-    <PageLink {href} height={"3rem"}>{idx.name}</PageLink>
+    <PageLink
+      {href}
+      color={"var(--main-bg-color)"}
+      hoverColor="var(--main-bg-color)"
+      currentPageColor="var(--current-page-link-color)"
+      height={"3rem"}>{idx.name}</PageLink
+    >
   {/each}
 </div>
 
