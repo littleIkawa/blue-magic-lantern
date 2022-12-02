@@ -1,9 +1,7 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import { spring } from "svelte/motion";
   import { blur } from "svelte/transition";
   import { base } from "$app/paths";
-  import { page } from "$app/stores";
   import { browser } from "$app/environment";
   import type { LayoutData } from "./$types";
   import SiteFooter from "@/components/SiteFooter.svelte";
@@ -111,7 +109,7 @@
       width: 85%;
     }
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1024px), (hover: none), (pointer: none) {
     .cursor {
       display: none;
     }
