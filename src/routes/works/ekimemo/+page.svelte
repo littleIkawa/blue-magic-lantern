@@ -3,6 +3,9 @@
   import PictureCard from "@/components/PictureCard.svelte";
   import { characterList, type EkimemoCharacter, type EkimemoWorkData } from "@/lib/works/ekimemo";
 
+  $: windowWidth = 0;
+  $: pictWidth = windowWidth < 1024 ? "90%" : "45%";
+
   $: selectedCharacterIdx = characterList.length;
   let selectedCharacter: EkimemoCharacter | null;
   $: if (characterList[selectedCharacterIdx] !== undefined) {
@@ -25,6 +28,7 @@
   };
 </script>
 
+<svelte:window bind:innerWidth={windowWidth} />
 <h3>駅メモの絵</h3>
 
 <h4>キャラクター一枚絵</h4>
@@ -42,7 +46,7 @@
 
 <div class="gallery-container">
   {#each charaWorks as work}
-    <PictureCard path={`works/${work.path}`} width={"40%"} alt={work.charaId} />
+    <PictureCard path={`works/${work.path}`} width={pictWidth} alt={work.charaId} />
   {/each}
 </div>
 
