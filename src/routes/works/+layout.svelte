@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
   import IndexBar from "@/components/IndexBar.svelte";
 
   const indexList = [
-    { name: "test1", href: "/works/ekimemo" },
-    { name: "test2", href: "/works/test2" },
+    { name: "駅メモ", href: "/works/ekimemo" },
+    { name: "Arcaea", href: "/works/arcaea" },
   ];
 </script>
 
