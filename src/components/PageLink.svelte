@@ -3,6 +3,9 @@
   export let href: string;
   export let height = "8rem";
   export let mobileHeight = "3rem";
+  export let color = "azure";
+  export let hoverColor = "rgb(172, 255, 244)";
+  export let currentPageColor = "rgb(100, 200, 255)";
 
   $: windowWidth = 0;
   $: resultHeight = windowWidth < 1024 ? mobileHeight : height;
@@ -11,7 +14,15 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 <div class="page-link__container">
-  <a class:current-page={currentPage} class="page-link" style:line-height={resultHeight} {href}>
+  <a
+    class:current-page={currentPage}
+    class="page-link"
+    style:line-height={resultHeight}
+    style:color
+    style:--hover-color={hoverColor}
+    style:--current-page-color={currentPageColor}
+    {href}
+  >
     <slot />
   </a>
 </div>
@@ -23,7 +34,7 @@
     position: relative;
     margin: 0 1rem;
     font-size: 2rem;
-    color: azure;
+    /* color: var(--main-font-color); */
   }
   @media (max-width: 1024px) {
     .page-link {
@@ -39,7 +50,8 @@
     content: "";
     width: 0;
     height: 0.2rem;
-    background: rgb(172, 255, 244);
+    /* background: rgb(172, 255, 244); */
+    background: var(--hover-color);
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -52,10 +64,11 @@
   }
 
   .page-link.current-page {
-    color: rgb(172, 255, 244);
+    color: var(--hover-color);
   }
   .page-link.current-page::before {
     width: 100%;
-    background: rgb(100, 200, 255);
+    /* background: rgb(100, 200, 255); */
+    background-color: var(--current-page-color);
   }
 </style>

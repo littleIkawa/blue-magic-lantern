@@ -3,6 +3,7 @@
 :root {
   --main-font-color: darkslateblue;
   --main-bg-color: azure;
+  --current-page-link-color: rgb(100, 200, 255);
   --blog-card-bg-color: rgb(azure / 0.6);
   --blog-active-tag-bg-color: lightgray;
 }
@@ -10,6 +11,7 @@
   :root {
     --main-font-color: azure;
     --main-bg-color: rgb(36, 30, 69);
+    --current-page-link-color: rgb(100, 90, 155);
     --blog-card-bg-color: rgb(darkslategray / 0.6);
     --blog-active-tag-bg-color: slategray;
   }

@@ -14,7 +14,6 @@
 
   const dateText = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
-  // TODO: ogpはデプロイしたあと設定
   const ogp = {
     url: `https://littleikawa.github.io/blue-magic-lantern/blog/${id}/`,
     type: "article",
