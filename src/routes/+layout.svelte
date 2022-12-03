@@ -2,12 +2,17 @@
   import { spring } from "svelte/motion";
   import { blur } from "svelte/transition";
   import { base } from "$app/paths";
+  import { page } from "$app/stores";
   import { browser } from "$app/environment";
   import type { LayoutData } from "./$types";
   import SiteFooter from "@/components/SiteFooter.svelte";
   import SiteHeader from "@/components/SiteHeader.svelte";
   import { afterNavigate } from "$app/navigation";
   import Analytics from "@/components/analytics/Analytics.svelte";
+
+  $: ogp = {
+    url: $page.url.toString(),
+  };
 
   export let data: LayoutData;
 
@@ -57,6 +62,19 @@
 
 <svelte:head>
   <link rel="stylesheet" href={`${base}/style/main.css`} />
+  <!-- ブログの個別ページでは別の画像や説明を設定するため除外する -->
+  {#if $page.route.id !== `/blog/[slug]`}
+    <meta property="og:url" content={ogp.url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blue Magic Lantern" />
+    <meta property="og:description" content="Waka's Website" />
+    <meta property="og:site_name" content="Blue Magic Lantern" />
+    <meta
+      property="og:image"
+      content="https://littleikawa.github.io/blue-magic-lantern/img/site-image.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+  {/if}
 </svelte:head>
 
 <!-- body上でマウスを動かしたら位置がセットされる -->
