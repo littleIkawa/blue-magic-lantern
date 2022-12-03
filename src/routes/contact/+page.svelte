@@ -12,7 +12,7 @@
     <tbody>
       <tr>
         <th>Mail</th>
-        <td> Kw.I.KU.2525@gmail.com </td>
+        <td>wakawaka.yuri.141@gmail.com</td>
       </tr>
       <tr>
         <th>Twitter</th>
