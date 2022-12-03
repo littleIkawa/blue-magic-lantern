@@ -1,8 +1,7 @@
 import type { ArticleAttributeJson } from "$lib/articles";
 import { fetchMarkdownArticles } from "$lib/utils";
 
-// TODO: ドメインやリンクを正しく設定する
-const siteURL = "https://domain.tld";
+const siteURL = "https://littleikawa.github.io/blue-magic-lantern/";
 const siteTitle = "Blue Magic Lantern";
 const siteDescription = "Waka's profile and blog website";
 
