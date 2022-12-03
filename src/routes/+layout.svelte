@@ -71,7 +71,7 @@
     <meta property="og:site_name" content="Blue Magic Lantern" />
     <meta
       property="og:image"
-      content="https://littleikawa.github.io/blue-magic-lantern/img/site-image.png"
+      content="https://littleikawa.github.io/blue-magic-lantern/img/site-icon.png"
     />
     <meta name="twitter:card" content="summary_large_image" />
   {/if}
