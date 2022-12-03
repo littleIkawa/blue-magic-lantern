@@ -12,6 +12,7 @@ export const characterList: EkimemoCharacter[] = [
   { id: "miyabi", name: "桂みやび" },
   { id: "naho", name: "豊栄なほ" },
   { id: "tsumugi", name: "根雨つむぎ" },
+  { id: "wakana", name: "生駒わかな" },
   { id: "iroha", name: "象潟いろは" },
   { id: "naru", name: "海部なる" },
   { id: "kanon", name: "阿佐ヶ谷カノン" },

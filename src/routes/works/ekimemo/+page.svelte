@@ -1,10 +1,12 @@
 <script lang="ts">
-  import { base } from "$app/paths";
   import PictureCard from "@/components/PictureCard.svelte";
   import { characterList, type EkimemoCharacter, type EkimemoWorkData } from "@/lib/works/ekimemo";
+  import type { PageData } from "./$types";
+
+  export let data: PageData;
 
   $: windowWidth = 0;
-  $: pictWidth = windowWidth < 1024 ? "90%" : "45%";
+  $: pictWidth = windowWidth < 1024 ? "90%" : "40%";
 
   $: selectedCharacterIdx = characterList.length;
   let selectedCharacter: EkimemoCharacter | null;
@@ -21,11 +23,14 @@
 
   let charaWorks: EkimemoWorkData[];
   $: charaWorks = [];
-  const getCharaWorks = async (id: string) => {
-    const response = await fetch(`${base}/api/works/ekimemo?id=${id}`);
-    const worksList: EkimemoWorkData[] = await response.json();
-    charaWorks = worksList;
+  const getCharaWorks = (id: string) => {
+    charaWorks = data.works.filter((work) => work.charaId === id);
   };
+  // const getCharaWorks = async (id: string) => {
+  //   const response = await fetch(`${base}/api/works/ekimemo?id=${id}`);
+  //   const worksList: EkimemoWorkData[] = await response.json();
+  //   charaWorks = worksList;
+  // };
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />

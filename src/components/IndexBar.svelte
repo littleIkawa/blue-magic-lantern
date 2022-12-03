@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import PageLink from "./PageLink.svelte";
 
   interface IndexData {
@@ -12,7 +13,7 @@
   {#each indexList as idx}
     {@const href = idx.href}
     <PageLink
-      {href}
+      href={`${base}${href}`}
       color={"var(--main-bg-color)"}
       hoverColor="var(--main-bg-color)"
       currentPageColor="var(--current-page-link-color)"
