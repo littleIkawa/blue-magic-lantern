@@ -73,7 +73,7 @@
       property="og:image"
       content="https://littleikawa.github.io/blue-magic-lantern/img/site-icon.png"
     />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
   {/if}
 </svelte:head>
 
