@@ -7,6 +7,7 @@
   import SiteFooter from "@/components/SiteFooter.svelte";
   import SiteHeader from "@/components/SiteHeader.svelte";
   import { afterNavigate } from "$app/navigation";
+  import Analytics from "@/components/analytics/Analytics.svelte";
 
   export let data: LayoutData;
 
@@ -51,6 +52,8 @@
   // ナビゲーション完了時にリスナ付与を実行
   afterNavigate(setLinkHoverEvent);
 </script>
+
+<Analytics />
 
 <svelte:head>
   <link rel="stylesheet" href={`${base}/style/main.css`} />
