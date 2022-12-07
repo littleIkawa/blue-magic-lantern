@@ -33,7 +33,6 @@
   .article-link {
     display: block;
     width: 100%;
-    height: fit-content;
     border: 1px solid var(--main-font-color);
     border-radius: 5px;
     background-color: var(--blog-card-bg-color);
@@ -43,6 +42,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
   }
   .article-card:hover {
     background-color: var(--main-font-color);
